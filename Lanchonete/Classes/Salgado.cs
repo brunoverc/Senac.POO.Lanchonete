@@ -19,6 +19,7 @@ namespace Lanchonete.Classes
             Sabor = sabor;
             Massa = massa;
             Tipo = tipo;
+            SetNome("Salgado de " + sabor);
         }
 
         public string Sabor { get; private set; }

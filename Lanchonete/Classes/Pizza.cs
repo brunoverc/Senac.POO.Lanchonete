@@ -12,6 +12,7 @@
             Sabor = sabor;
             Borda = borda;
             Molho = molho;
+            SetNome("Pizza de " + sabor);
         }
 
         public string Sabor { get; private set; }

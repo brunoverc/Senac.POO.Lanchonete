@@ -9,10 +9,9 @@ namespace Lanchonete.Classes
 {
     public class Pedido : IPedido
     {
-        public Pedido(string nomeCliente, decimal taxaServico)
+        public Pedido(string nomeCliente)
         {
             NomeCliente = nomeCliente;
-            TaxaServico = taxaServico;
 
             //Inicializo ele aqui no construtor para evitar erros ao tentar adicionar
             ItensConsumo = new List<ItemConsumo>();
@@ -53,6 +52,7 @@ namespace Lanchonete.Classes
 
         public string ImprimirNotaFiscal()
         {
+            CalcularTaxaDeServico();
             StringBuilder notaFiscal = new StringBuilder();
             notaFiscal.AppendLine("-----Nota Fiscal-----");
             notaFiscal.AppendLine("Itens Consumidos");
@@ -60,7 +60,7 @@ namespace Lanchonete.Classes
             var valorFinal = GetValorFinal();
             foreach (ItemConsumo item in ItensConsumo)
             {
-                notaFiscal.AppendLine(item.Nome + " | Peso: " + item.Peso + " | Valor: R$ " +
+                notaFiscal.AppendLine(item.Nome + " |\tPeso: " + item.Peso + " |\t Valor: R$ " +
                     item.GetPrecoItem());
             }
 

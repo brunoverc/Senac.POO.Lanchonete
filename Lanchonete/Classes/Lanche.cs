@@ -12,6 +12,7 @@
             Pao = pao;
             Recheio = recheio;
             Molho = molho;
+            SetNome("Lanche de " + pao + " com " + recheio);
         }
 
         public string Pao { get; private set; }

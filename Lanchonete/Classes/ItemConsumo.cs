@@ -46,7 +46,7 @@ namespace Lanchonete.Classes
 
         public void SetNome(string nome)
         {
-            Nome = nome.ToString();
+            Nome = nome;
         }
 
         public override string ToString()
